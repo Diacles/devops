@@ -13,7 +13,6 @@
         </header>
         <main>
             <div id="events-list">
-                <!-- Le contenu sera généré par JavaScript -->
             </div>
         </main>
         <footer>
@@ -34,7 +33,7 @@
                     eventsList.className = 'events';
                     
                     // Parcourir les événements et les ajouter à la liste
-                    data.events.forEach(event => {
+                    data.data.forEach(event => {
                         const eventItem = document.createElement('li');
                         eventItem.className = 'event-item';
                         
@@ -42,8 +41,8 @@
                         const logoDiv = document.createElement('div');
                         logoDiv.className = 'event-logo';
                         const logo = document.createElement('img');
-                        logo.src = 'images/' + event.logo;
-                        logo.alt = `Logo ${event.city}`;
+                        logo.src = event.logo_url;
+                        logo.alt = `Logo ${event.location}`;
                         logoDiv.appendChild(logo);
                         
                         // Créer l'élément pour les informations
@@ -51,7 +50,7 @@
                         infoDiv.className = 'event-info';
                         
                         const cityName = document.createElement('h2');
-                        cityName.textContent = event.city;
+                        cityName.textContent = event.location;
                         
                         // Formatter la date
                         const eventDate = new Date(event.date);
