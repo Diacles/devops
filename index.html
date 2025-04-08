@@ -1,5 +1,91 @@
-<h1>Devops Days locations</h1>
-<ul>
-	<li>Paris</li>
-	<li>Basel</li>
-</ul>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Days</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DevOps Days locations</h1>
+        </header>
+        <main>
+            <div id="events-list">
+                <!-- Le contenu sera généré par JavaScript -->
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2025 DevOps Days</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Charger le fichier JSON
+            fetch('events.json')
+                .then(response => response.json())
+                .then(data => {
+                    const eventsContainer = document.getElementById('events-list');
+                    
+                    // Créer une liste d'événements
+                    const eventsList = document.createElement('ul');
+                    eventsList.className = 'events';
+                    
+                    // Parcourir les événements et les ajouter à la liste
+                    data.events.forEach(event => {
+                        const eventItem = document.createElement('li');
+                        eventItem.className = 'event-item';
+                        
+                        // Créer l'élément pour le logo
+                        const logoDiv = document.createElement('div');
+                        logoDiv.className = 'event-logo';
+                        const logo = document.createElement('img');
+                        logo.src = 'images/' + event.logo;
+                        logo.alt = `Logo ${event.city}`;
+                        logoDiv.appendChild(logo);
+                        
+                        // Créer l'élément pour les informations
+                        const infoDiv = document.createElement('div');
+                        infoDiv.className = 'event-info';
+                        
+                        const cityName = document.createElement('h2');
+                        cityName.textContent = event.city;
+                        
+                        // Formatter la date
+                        const eventDate = new Date(event.date);
+                        const formattedDate = eventDate.toLocaleDateString('fr-FR', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        });
+                        
+                        const dateInfo = document.createElement('p');
+                        dateInfo.className = 'date';
+                        dateInfo.textContent = formattedDate;
+                        
+                        // Ajouter les éléments d'information
+                        infoDiv.appendChild(cityName);
+                        infoDiv.appendChild(dateInfo);
+                        
+                        // Assembler l'élément complet
+                        eventItem.appendChild(logoDiv);
+                        eventItem.appendChild(infoDiv);
+                        
+                        // Ajouter à la liste
+                        eventsList.appendChild(eventItem);
+                    });
+                    
+                    // Ajouter la liste au conteneur
+                    eventsContainer.appendChild(eventsList);
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement des événements:', error);
+                    const eventsContainer = document.getElementById('events-list');
+                    eventsContainer.innerHTML = '<p class="error">Erreur lors du chargement des événements.</p>';
+                });
+        });
+    </script>
+</body>
+</html>

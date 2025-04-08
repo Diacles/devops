@@ -1,0 +1,29 @@
+{
+    "events": [
+      {
+        "city": "Paris",
+        "date": "2025-06-15",
+        "logo": "paris.png"
+      },
+      {
+        "city": "Basel",
+        "date": "2025-07-20",
+        "logo": "basel.png"
+      },
+      {
+        "city": "Amsterdam",
+        "date": "2025-08-10",
+        "logo": "amsterdam.png"
+      },
+      {
+        "city": "Berlin",
+        "date": "2025-09-05",
+        "logo": "berlin.png"
+      },
+      {
+        "city": "London",
+        "date": "2025-10-12",
+        "logo": "london.png"
+      }
+    ]
+  }
