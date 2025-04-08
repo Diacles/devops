@@ -1,29 +1,39 @@
 {
-    "events": [
+    "data": [
       {
-        "city": "Paris",
-        "date": "2025-06-15",
-        "logo": "paris.png"
+        "date": "2025-04-15",
+        "location": "Tokyo",
+        "logo_url": "https://devopsdays.org/img/event-logo-square_hu294f2ba751b6202c3c6e3546e26d26cd_230735_236x236_fill_q100_h2_lanczos_center_3.webp"
       },
       {
-        "city": "Basel",
-        "date": "2025-07-20",
-        "logo": "basel.png"
+        "date": "2025-04-29",
+        "location": "Atlanta",
+        "logo_url": "https://devopsdays.org/events/2025-atlanta/logo-square_hud67f6d41eb837e805f0e02ac1d33c663_243741_236x236_fill_q100_h2_lanczos_center_3.webp"
       },
       {
-        "city": "Amsterdam",
-        "date": "2025-08-10",
-        "logo": "amsterdam.png"
+        "date": "2025-05-14",
+        "location": "Singapore",
+        "logo_url": "https://devopsdays.org/events/2025-singapore/logo-square_huc8654326b4e9c4b8b80feeb5c3088254_42785_236x236_fill_q100_h2_lanczos_center_3.webp"
       },
       {
-        "city": "Berlin",
-        "date": "2025-09-05",
-        "logo": "berlin.png"
+        "date": "2025-05-19",
+        "location": "Geneva",
+        "logo_url": "https://devopsdays.org/events/2025-geneva/logo_hu0dd838624a8b3466f01f6f457b297b33_38115_236x236_fill_q100_h2_lanczos_center_3.webp"
       },
       {
-        "city": "London",
-        "date": "2025-10-12",
-        "logo": "london.png"
+        "date": "2025-05-22",
+        "location": "Prague",
+        "logo_url": "https://devopsdays.org/events/2025-prague/logo_hud9577340b54275cef64769bc169610a0_91709_236x236_fill_q100_h2_lanczos_center_3.webp"
+      },
+      {
+        "date": "2025-06-04",
+        "location": "Ukraine",
+        "logo_url": "https://devopsdays.org/events/2025-kyiv/logo-square_hu2737e09255e40b0370e84542349e4631_83885_236x236_fill_q100_h2_lanczos_center_3.webp"
+      },
+      {
+        "date": "2025-06-18",
+        "location": "Amsterdam",
+        "logo_url": "https://devopsdays.org/events/2025-amsterdam/logo-square_hu06c7c7648b11a4dc6f4e51f617b122d8_918610_236x236_fill_q100_h2_lanczos_center_3.webp"
       }
     ]
   }
