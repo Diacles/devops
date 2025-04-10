@@ -20,7 +20,7 @@ services:
     container_name: con-app-php-apache
     build: .  # Utilise le Dockerfile dans le répertoire courant
     volumes:
-      - ./connect.php:/var/www/html/connect.php
+      - ./:/var/www/html/  # Montez tout le répertoire
     ports:
       - "8080:80"
     depends_on:
