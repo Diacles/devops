@@ -18,13 +18,23 @@ services:
       
   web:
     container_name: con-app-php-apache
-    build: .  # Utilise le Dockerfile dans le répertoire courant
+    image: ghcr.io/diacles/devops-web:latest
     volumes:
-      - ./connect.php:/var/www/html/connect.php
+      - ./:/var/www/html/  # Montez tout le répertoire courant
     ports:
       - "8080:80"
     depends_on:
       - db
+    networks:
+      - app-network
+      
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 con-app-php-apache  # Surveille uniquement le conteneur web toutes les 30 secondes
+    restart: always
     networks:
       - app-network
 
