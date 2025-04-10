@@ -1,0 +1,33 @@
+version: '3.6'
+services:
+  db:
+    container_name: mariadb-countries
+    image: mariadb:latest
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d:ro
+    environment:
+      MARIADB_ROOT_PASSWORD: sup4rs3cure
+      MARIADB_USER: johnny
+      MARIADB_PASSWORD: s3cr4T
+      MARIADB_DATABASE: countries
+    ports:
+      - "3306:3306"
+    restart: always
+    networks:
+      - app-network
+      
+  web:
+    container_name: con-app-php-apache
+    build: .  # Utilise le Dockerfile dans le répertoire courant
+    volumes:
+      - ./connect.php:/var/www/html/connect.php
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
